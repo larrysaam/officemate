@@ -1,0 +1,56 @@
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  padding: 16px;
+  padding-top: 0px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.tool-card {
+  background: #f0f0f0;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.tool-card:hover {
+  transform: scale(1.02);
+}
+
+.tool-card__icon {
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #23242b;
+}
+
+.tool-card__title {
+  font-size: 13px;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  margin-top: -10px;
+}
+
+/* Special sizing for different cards */
+.tool-card:first-child {
+  grid-column: 1 / -1; /* Makes first card span full width */
+}
+
+.tool-card:nth-child(3) {
+    grid-row: span 5; /* Makes AI card taller */
+  }
+  
+
+.tool-card:nth-child(4) {
+  grid-row: span 5; /* Makes AI card taller */
+}
+
