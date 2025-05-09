@@ -92,10 +92,11 @@
 
 
 
-
 .plan-button.neon-border {
     position: relative;
-    background: white;
+    background: linear-gradient(45deg, #2ECC71, #0f73e4, #4A90E2, #2ECC71);
+    background-size: 300% 300%;
+    animation: moveGradient 3s linear infinite;
     border: none;
     border-radius: 24px;
     padding: 12px 32px;
@@ -105,50 +106,24 @@
     cursor: pointer;
     margin-top: 16px;
     transition: all 0.3s ease;
+    transform: scale(1.01);
 }
-/* 
-.plan-button.neon-border::before {
-    content: '';
-    position: absolute;
-    top: -4px;
-    left: -4px;
-    right: -4px;
-    bottom: -4px;
-    background: linear-gradient(45deg, #2ECC71, #0f73e4, #4A90E2);
-    border-radius: inherit;
-    z-index: -1;
-}
-
-.plan-button.neon-border::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: white;
-    border-radius: inherit;
-    z-index: -1;
-}
-
-.plan-button.neon-border:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(26, 35, 126, 0.4);
-} */
 
 .plan-button.neon-border::before {
     content: '';
     position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
     background: linear-gradient(45deg, #2ECC71, #0f73e4, #4A90E2, #2ECC71);
     border-radius: inherit;
     z-index: -1;
     background-size: 300% 300%;
-    animation: moveGradient 3s alternate infinite;
+    animation: moveGradient 3s linear infinite;
+    filter: blur(2px);
 }
+
 
 @keyframes moveGradient {
     0% {
@@ -162,6 +137,7 @@
     }
 }
 
-.plan-button.neon-border:hover::before {
-    animation-duration: 3s;
+.plan-button.neon-border:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(46, 204, 113, 0.3);
 }
