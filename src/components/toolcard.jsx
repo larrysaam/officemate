@@ -5,6 +5,7 @@ import { CiImageOn } from "react-icons/ci";
 import { FaRegFilePdf } from "react-icons/fa6";
 import { RiAiGenerate } from "react-icons/ri";
 import './toolcard.css';
+import { useNavigate } from "react-router-dom";
 
 const ToolCard = ({ icon, title, onClick }) => {
   return (
@@ -16,18 +17,21 @@ const ToolCard = ({ icon, title, onClick }) => {
 };
 
 export const ToolGrid = () => {
+
+  const nav = useNavigate();
   const tools = [
     {
       id: 1,
       icon: <><CiImageOn /> → <BsFiletypeDocx /></>,
       title: "Image to DOCX Converter",
-      className: "tool-wide"
+      className: "tool-wide",
     },
     {
       id: 2,
       icon: <><FaRegFilePdf /> <BsArrowLeftRight style={{width: '17px'}}/> <BsFiletypeDocx /></>,
       title: "PDF ↔ DOCX Converter",
-      className: "tool-normal"
+      className: "tool-normal",
+      route: "/pdftodocx"
     },
     {
       id: 3,
@@ -57,7 +61,7 @@ export const ToolGrid = () => {
           icon={tool.icon}
           title={tool.title}
           className={tool.className}
-          onClick={() => console.log(`Clicked ${tool.title}`)}
+          onClick={() => nav(tool.route)}
         />
       ))}
     </div>

@@ -7,58 +7,22 @@
   max-width: 600px;
   margin: 0 auto;
 }
+
 .tool-card {
-    background: linear-gradient(45deg, 
-      rgba(46, 204, 113, 0.1), 
-      rgba(15, 115, 228, 0.1), 
-      rgba(74, 144, 226, 0.1), 
-      rgba(46, 204, 113, 0.1)
-    );
-    background-size: 300% 300%;
-    animation: moveGradient 3s linear infinite;
-    border-radius: 18px;
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    gap: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-  }
-  
-  .tool-card::before {
-    content: '';
-    position: absolute;
-    inset: -1px;
-    background: linear-gradient(45deg, #2ECC71, #0f73e4, #4A90E2, #2ECC71);
-    border-radius: inherit;
-    z-index: -1;
-    opacity: 0.2;
-    transition: opacity 0.3s ease;
-  }
-  
-  
-  .tool-card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 20px rgba(46, 204, 113, 0.2);
-  }
-  
-  .tool-card:hover::before {
-    opacity: 0.2;
-  }
-  
-  @keyframes moveGradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
+  background: #f0f0f0;
+  border-radius: 18px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.tool-card:hover {
+  transform: scale(1.02);
+}
 
 .tool-card__icon {
   font-size: 28px;
