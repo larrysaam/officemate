@@ -1,25 +1,53 @@
 .navigation {
-  position: fixed;
-  bottom: 10px;
-  left: 0;
-  right: 0;
-  height: 50px;
-  background: #f0f0f0;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 0 20px;
-  border-radius: 100px;
-  margin: 0 16px;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    height: 50px;
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 20px;
+    border-radius: 100px;
+    z-index: 999;
 }
+
+.navigation::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #2ECC71, #0f73e4, #4A90E2, #2ECC71);
+    border-radius: inherit;
+    z-index: -1;
+    background-size: 300% 300%;
+    animation: moveGradient 3s linear infinite;
+    filter: blur(2px);
+}
+
+.navigation::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    border-radius: inherit;
+    z-index: -1;
+}
+
+
 
 .nav-button {
   background: none;
   border: none;
   padding: 12px;
   cursor: pointer;
-  color: #1d1d25;
+  color: #1a237e;
   font-size: 24px;
   display: flex;
   align-items: center;
