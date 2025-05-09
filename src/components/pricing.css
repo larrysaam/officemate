@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600&display=swap');
+
+.pricing-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: white;
+}
+
+.pricing-title {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #1a237e;
+}
+
+.pricing-card {
+    background-color: #f0f0f0;
+    border-radius: 24px;
+    padding: 32px;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1a237e;
+}
+
+.per-month {
+    font-size: 1rem;
+    color: #666;
+}
+
+.price-description {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 24px;
+}
+
+.features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.feature-item span{
+    text-align: left;
+}
+
+.check-icon {
+    width: 30px;
+    height: 30px;
+    color: #4A90E2;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+.plan-button {
+    background-color: #2ECC71;
+    border: none;
+    border-radius: 24px;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    margin-top: 16px;
+}
+
+.plan-button:hover {
+    transform: scale(1.05);
+}
+
+
+
+
+
+
+.plan-button.neon-border {
+    position: relative;
+    background: white;
+    border: none;
+    border-radius: 24px;
+    padding: 12px 32px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    margin-top: 16px;
+    transition: all 0.3s ease;
+}
+/* 
+.plan-button.neon-border::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: linear-gradient(45deg, #2ECC71, #0f73e4, #4A90E2);
+    border-radius: inherit;
+    z-index: -1;
+}
+
+.plan-button.neon-border::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    border-radius: inherit;
+    z-index: -1;
+}
+
+.plan-button.neon-border:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(26, 35, 126, 0.4);
+} */
+
+.plan-button.neon-border::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(45deg, #2ECC71, #0f73e4, #4A90E2, #2ECC71);
+    border-radius: inherit;
+    z-index: -1;
+    background-size: 300% 300%;
+    animation: moveGradient 3s alternate infinite;
+}
+
+@keyframes moveGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.plan-button.neon-border:hover::before {
+    animation-duration: 3s;
+}

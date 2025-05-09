@@ -1,20 +1,23 @@
-import { FaRegFile, FaHome, FaUser } from "react-icons/fa";
+import { Link, useLocation } from 'react-router-dom';
 import { BsFiles } from "react-icons/bs";
 import { GoHomeFill } from "react-icons/go";
+import { FaUser } from "react-icons/fa";
 import "./navigation.css";
 
 export const Navigation = () => {
+  const location = useLocation();
+
   return (
     <nav className="navigation">
-      <button className="nav-button">
+      <Link to="/documents" className={`nav-button ${location.pathname === '/documents' ? 'active' : ''}`}>
         <BsFiles />
-      </button>
-      <button className="nav-button">
+      </Link>
+      <Link to="/" className={`nav-button ${location.pathname === '/' ? 'active' : ''}`}>
         <GoHomeFill />
-      </button>
-      <button className="nav-button">
+      </Link>
+      <Link to="/profile" className={`nav-button ${location.pathname === '/profile' ? 'active' : ''}`}>
         <FaUser />
-      </button>
+      </Link>
     </nav>
   );
 };
