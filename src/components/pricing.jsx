@@ -23,7 +23,7 @@ export const PricingCard = () => {
             .then(data => {
                 setCountryCode(data.country);
                 setUserCurrency(data.currency);
-                convertCurrency(950, 'XOF', data.currency);
+                convertCurrency(650, 'XOF', data.currency);
             })
             .catch(error => console.error('Error fetching location:', error));
     }, []);
