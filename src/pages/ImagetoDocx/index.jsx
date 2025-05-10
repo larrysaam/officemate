@@ -8,8 +8,8 @@ import { ImageUploader } from '../../components/FileUploader';
 
 export const ImagetoDocx = () => {
     const [extractedText, setExtractedText] = useState('');
-    const [isExtracting, setIsExtracting] = useState(true);
-    const [showEditor, setShowEditor] = useState(false);
+    const [isExtracting, setIsExtracting] = useState(false);
+    const [showEditor, setShowEditor] = useState(true);
 
     const handleImageUpload = async (file) => {
         try {
