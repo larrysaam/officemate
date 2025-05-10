@@ -5,6 +5,7 @@ import { Home } from './pages/Home';
 import { Pricing } from './pages/Pricing';
 import { Navigation } from './components/navigation';
 import { PDFtoDOCX } from './pages/PDFtoDOCX';
+import { ImagetoDocx } from './pages/ImagetoDocx';
 
 // Replace with your actual Clerk publishable key
 const clerkPubKey = process.env.REACT_APP_CLERK_PUBLISHABLE_KEY;
@@ -17,6 +18,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path='/pdftodocx' element={<PDFtoDOCX />} />
+            <Route path='/imagetodocx' element={<ImagetoDocx />} />
             <Route
               path="/pricing"
               element={

@@ -25,6 +25,7 @@ export const ToolGrid = () => {
       icon: <><CiImageOn /> → <BsFiletypeDocx /></>,
       title: "Image to DOCX Converter",
       className: "tool-wide",
+      route: "/imagetodocx"
     },
     {
       id: 2,

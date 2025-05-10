@@ -1,9 +1,15 @@
 import { motion } from 'framer-motion';
+import { FaFileAlt } from 'react-icons/fa';
 import { 
     ProgressContainer, 
     ProgressBar, 
-    ProgressText 
+    ProgressText,
+    LoaderContainer, 
+    LoaderText,
+    IconWrapper
 } from '../../assets/style/styles';
+
+
 
 export const ConversionProgress = ({ progress }) => {
     return (
@@ -22,5 +28,45 @@ export const ConversionProgress = ({ progress }) => {
             </ProgressBar>
             <ProgressText>{progress}% Converting...</ProgressText>
         </ProgressContainer>
+    );
+};
+
+
+
+
+
+// extracting loader
+
+export const ExtractingLoader = () => {
+    return (
+        <LoaderContainer>
+            <IconWrapper>
+                <motion.div
+                    animate={{
+                        scale: [1, 1.2, 1],
+                        rotate: [0, 360],
+                    }}
+                    transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                    }}
+                >
+                    <FaFileAlt size={40} />
+                </motion.div>
+            </IconWrapper>
+            <LoaderText>
+                <motion.div
+                    animate={{ opacity: [1, 0.5, 1] }}
+                    transition={{
+                        duration: 1.5,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                    }}
+                >
+                    Extracting text from your image...
+                </motion.div>
+            </LoaderText>
+        </LoaderContainer>
     );
 };

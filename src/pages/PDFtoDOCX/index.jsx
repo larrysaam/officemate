@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { saveAs } from 'file-saver';
 import { FileUploader } from '../../components/FileUploader';
 import { ConversionProgress } from '../../components/ConversionProgress';
 import { convertPDFtoDOCX, convertDOCXtoPDF } from '../../utils/fileConverter';
@@ -34,6 +35,7 @@ export const PDFtoDOCX = () => {
                 isDocx ? '.docx' : '.pdf',
                 isDocx ? '.pdf' : '.docx'
             );
+            saveAs(convertedFile, fileName);
 
         } catch (error) {
             console.error('Conversion failed:', error);
